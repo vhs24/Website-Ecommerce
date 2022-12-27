@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale=1.0, minimum-scale=1.0">
+<title>Login - Shopme Admin</title>
+
+<link rel="stylesheet"
+	th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+<script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}">
+</script>
+<script type="text/javascript"
+	th:src="@{/webjars/bootstrap/js/bootstrap.min.js}">
+</script>
+</head>
+<body class="img js-fullheight"
+	style="background-image: url(images/bg.jpg); height: 100vh;">
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Login</h2>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-6 col-lg-4">
+					<div class="login-wrap p-0">
+						<h3 class="mb-4 text-center">Have an account?</h3>
+						<form th:action="@{/login}" method="post" class="signin-form">
+							<div class="form-group alert alert-danger text-center" th:if="${param.error}">
+									<span th:text="${session['SPRING_SECURITY_LAST_EXCEPTION'].message}">Wrong
+										input!</span>
+							</div>
+							<div class="form-group">
+								<input type="email" name="email" class="form-control"
+									placeholder="Username" required>
+							</div>
+							<div class="form-group">
+								<input type="password" name="password" class="form-control"
+									placeholder="Password" required>
+							</div>
+							<div class="form-group">
+								<button type="submit"
+									class="form-control btn btn-primary submit px-3">Sign
+									In</button>
+							</div>
+							<div class="form-group d-md-flex">
+								<div class="w-50">
+									<label class="checkbox-wrap checkbox-primary">Remember
+										Me <input type="checkbox" name="remember-me" checked>
+										<span class="checkmark"></span>
+									</label>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- <div class="container-fluid text-center">
+		<div>
+			<img alt="" th:src="@{/images/048 ShopmeAdminBig.png}">
+		</div>
+		<form th:action="@{/login}" method="post"
+			style="max-width: 400px; margin: 20px auto;">
+			<div th:if="${param.error}">
+				<p class="text-danger">
+					<span
+						th:text="${session['SPRING_SECURITY_LAST_EXCEPTION'].message}">Wrong
+						input!</span>
+				</p>
+			</div>
+			<div th:if="${param.logout}">
+				<p class="text-warning">You have been logged out.</p>
+			</div>
+
+			<div class="border border-secondary rounded p-3">
+				<p>Access to Shopme Control Panel</p>
+				<p>
+					<input type="email" name="email" class="form-control"
+						placeholder="E-mail" required />
+				</p>
+				<p>
+					<input type="password" name="password" class="form-control"
+						placeholder="Password" required />
+				</p>
+				<p>
+					<input type="checkbox" name="remember-me"> <label>
+						Remember me </label>
+
+				</p>
+				<p>
+					<input type="submit" value="Login" class="btn btn-primary" />
+				</p>
+			</div>
+		</form>
+	</div> -->
+</body>
+</html>
