@@ -156,7 +156,7 @@ public class CategoryController {
 			RedirectAttributes redirectAttributes) {
 		try {
 			categoryService.delete(id);
-			String categoryDir = "../categories-images/" + id;
+			String categoryDir = "/categories-images/" + id;
 			FileUploadUtil.removeDir(categoryDir);
 			redirectAttributes.addFlashAttribute("message", "The category ID " + id + " has been deleted successfully");
 		} catch (Exception e) {

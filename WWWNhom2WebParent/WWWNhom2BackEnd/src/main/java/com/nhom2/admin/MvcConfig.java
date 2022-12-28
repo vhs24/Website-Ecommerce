@@ -17,17 +17,17 @@ public class MvcConfig implements WebMvcConfigurer {
 		registry.addResourceHandler("/user-photos/**")
 			.addResourceLocations("file:/" + userPhotosPath + "/");
 		
-		Path categoryImagesDir = Paths.get("../categories-images");
+		Path categoryImagesDir = Paths.get("categories-images");
 		String categoryImagesPath = categoryImagesDir.toFile().getAbsolutePath();
 		registry.addResourceHandler("/categories-images/**")
 			.addResourceLocations("file:/" + categoryImagesPath + "/");
 		
-		Path brandImagesDir = Paths.get("../brands-images");
+		Path brandImagesDir = Paths.get("brands-images");
 		String brandImagesPath = brandImagesDir.toFile().getAbsolutePath();
 		registry.addResourceHandler("/brands-images/**")
 			.addResourceLocations("file:/" + brandImagesPath + "/");
 		
-		Path productImagesDir = Paths.get("../products-images");
+		Path productImagesDir = Paths.get("products-images");
 		String productImagesPath = productImagesDir.toFile().getAbsolutePath();
 		registry.addResourceHandler("/products-images/**")
 			.addResourceLocations("file:/" + productImagesPath + "/");
