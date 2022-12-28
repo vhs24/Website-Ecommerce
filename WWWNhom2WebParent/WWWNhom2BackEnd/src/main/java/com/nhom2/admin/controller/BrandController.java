@@ -113,7 +113,7 @@ public class BrandController {
 			brand.setLogo(fileName);
 
 			Brand saveBrand = brandService.save(brand);
-			String uploadDir = "/brands-images/" + saveBrand.getId();
+			String uploadDir = "brands-images/" + saveBrand.getId();
 
 			FileUploadUtil.clearDir(uploadDir);
 			FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
@@ -153,7 +153,7 @@ public class BrandController {
 
 		try {
 			brandService.delete(id);
-			String brandDir = "/brands-images/" + id;
+			String brandDir = "brands-images/" + id;
 			FileUploadUtil.removeDir(brandDir);
 
 			redirectAttributes.addFlashAttribute("message", "The Brand id " + id + " have been deleted successfully");

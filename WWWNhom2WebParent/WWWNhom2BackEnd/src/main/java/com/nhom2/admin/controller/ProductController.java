@@ -146,7 +146,7 @@ public class ProductController {
 	}
 
 	private void deleteExtraImagesWeredRemoveOnForm(Product product) {
-		String extraImage = "/products-images/" + product.getId() + "/extras";
+		String extraImage = "products-images/" + product.getId() + "/extras";
 		Path dirPath = Paths.get(extraImage);
 
 		try {
@@ -203,13 +203,13 @@ public class ProductController {
 			Product product) throws IOException {
 		if (!multipartFile.isEmpty()) {
 			String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
-			String uploadDir = "/products-images/" + product.getId();
+			String uploadDir = "products-images/" + product.getId();
 			FileUploadUtil.clearDir(uploadDir);
 			FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
 		}
 
 		if (extraMultipartFile.length > 0) {
-			String extraMultipartDir = "/products-images/" + product.getId() + "/extras";
+			String extraMultipartDir = "products-images/" + product.getId() + "/extras";
 
 			for (MultipartFile file : extraMultipartFile) {
 				if (file.isEmpty())
