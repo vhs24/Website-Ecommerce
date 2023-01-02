@@ -9,5 +9,5 @@ git clone https://github.com/vhs/Website-Ecommerce.git
 
 3. `Run project`
 
-Admin page
+Client page
 ![Alt Text](https://github.com/vhs24/Website-Ecommerce/blob/main/sql/HomePage.png)
